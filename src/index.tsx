@@ -18,6 +18,8 @@ export interface IToolbar {
   img?: boolean
   link?: boolean
   code?: boolean
+  bold?: boolean
+  italic?: boolean
   preview?: boolean
   expand?: boolean
   undo?: boolean
@@ -38,6 +40,8 @@ export interface IWords {
   link?: string
   code?: string
   save?: string
+  bold?: string
+  italic?: string
   preview?: string
   singleColumn?: string
   doubleColumn?: string
@@ -244,6 +248,16 @@ class MdEditor extends React.Component<IP, IS> {
         prefix: '```',
         subfix: '\n\n```',
         str: 'language'
+      },
+      bold: {
+        prefix: '**',
+        subfix: '**',
+        str: 'bold'
+      },
+      italic: {
+        prefix: '*',
+        subfix: '*',
+        str: 'italic'
       },
       tab: {
         prefix: '  ',
