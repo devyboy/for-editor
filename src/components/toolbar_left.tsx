@@ -115,6 +115,11 @@ class Toolbars extends React.Component<IP, IS> {
             <i className="foricon for-bold" />
           </li>
         )}
+        {toolbar.italic && (
+          <li onClick={() => this.onClick('italic')} title={words.italic}>
+            <i className="foricon for-italic" />
+          </li>
+        )}
         {toolbar.code && (
           <li onClick={() => this.onClick('code')} title={words.code}>
             <i className="foricon for-code" />
