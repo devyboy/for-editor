@@ -105,21 +105,14 @@ class Toolbars extends React.Component<IP, IS> {
             H4
           </li>
         )}
-        {toolbar.img && (
-          <li className="for-toolbar-img" onMouseOver={() => this.imgMouseOver()} onMouseOut={() => this.imgMouseOut()}>
-            <i className="foricon for-image" />
-            <ul style={imgHidden ? {display: 'none'} : {}}>
-              <li onClick={() => this.addImgUrl()}>{words.addImgLink}</li>
-              <li>
-                {words.addImg}
-                <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" onChange={(e) => this.addImgFile(e)}/>
-              </li>
-            </ul>
-          </li>
-        )}
         {toolbar.link && (
           <li onClick={() => this.onClick('link')} title={words.link}>
             <i className="foricon for-link" />
+          </li>
+        )}
+        {toolbar.bold && (
+          <li onClick={() => this.onClick('bold')} title={words.bold}>
+            <i className="foricon for-bold" />
           </li>
         )}
         {toolbar.code && (
@@ -130,6 +123,18 @@ class Toolbars extends React.Component<IP, IS> {
         {toolbar.save && (
           <li onClick={() => this.onClick('save')} title={`${words.save} (ctrl+s)`}>
             <i className="foricon for-save" />
+          </li>
+        )}
+        {toolbar.img && (
+          <li className="for-toolbar-img" onMouseOver={() => this.imgMouseOver()} onMouseOut={() => this.imgMouseOut()}>
+            <i className="foricon for-image" />
+            <ul style={imgHidden ? {display: 'none'} : {}}>
+              <li onClick={() => this.addImgUrl()}>{words.addImgLink}</li>
+              <li>
+                {words.addImg}
+                <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" onChange={(e) => this.addImgFile(e)}/>
+              </li>
+            </ul>
           </li>
         )}
       </ul>
